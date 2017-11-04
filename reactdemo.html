@@ -6,7 +6,20 @@
     <script src="build/browser.min.js"></script>
 </head>
 <body>
-<div id="example"></div>
+<div id="example">
+    采用jsx语法
+    let
+    声明组件
+    驼峰命名原则
+    首字母必须大写
+    React.createClass({})声明组件类；
+    return中只能有一个顶级div其余内容采用嵌套模式
+    ReactDOM.render(
+    只能使用一个顶级div标签
+    div标签结束必须使用，逗号结尾
+    document.getElementById('HTML中真实存在的DOM结构的ID值')
+    )
+</div>
 <script type="text/babel">
     let names = ['alice','emily','kate'];
     let arr=[
@@ -20,7 +33,19 @@
                 <p>react</p>
             </div>
         }
-    })
+    });
+    let NotList = React.createClass({
+        render:function () {
+            return(
+                <ol>{
+                    React.Children.map(this.props.children,function(child){
+                        return <li>{child}</li>
+                })
+                }
+                </ol>
+            )
+        }
+    });
     ReactDOM.render(
         <div>
             {
@@ -31,10 +56,13 @@
             <h1>hello wold</h1>
             <div>{arr}</div>
             <HelloMessage name="lucky"/>
+            <NotList>
+                <span>jianyeli</span>
+                <span>xiruliu</span>
+            </NotList>
         </div>,
         document.getElementById('example')
     );
-
 </script>
 </body>
 </html>
