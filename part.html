@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>详情页</title>
+	<meta charset="utf-8">
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/xiangying.js"></script>
+	<script>
+	function calcmoney(obj){ 
+		var num =isNaN(parseInt(obj.value))?0:parseInt(obj.value); 
+		var price = $('.price').text();
+		$('.money').html(num*price);
+	}
+	</script>
+</head>
+<body>
+	<header id="header" class="">
+		<img src="images/bg.png" alt="">
+	</header>
+	<!-- /header -->
+	<section>
+		<div class="sec-tit">
+			<p class="sec-tit-left">德国原装狩猎者系列</p>
+			<p class="sec-tit-right">
+			<img src="images/shoper.png" alt="shoper">
+			<span class="shoper_min">狩猎者</span>
+			</p>
+		</div>
+		<div id="news">
+				<p class="news_tit">商品描述</p>
+				<p class="news_cont">
+					ES6是JavaScript语言的下一个版本，预计将在2014年底正式发布。它对JavaScript做了大量改造，提高了灵活性和应用性，使得这门语言真正成为了企业级开发工具。
+但是，ES6也使得JavaScript变得更抽象、更难学了。我把自己过去一年的学习笔记，做成了这本书，采用创意共享开源许可证，源码放在Github上面。欢迎大家访问，多提宝贵意见，多发Pull Request。
+此书将伴随ES6的推广，持续修订，目标是成为最好的ES6中文教材。令人高兴的是，电子工业出版社已经接受了这部书稿，预计不久后，印刷版就可以问世。
+				</p>
+			</div>
+		<div class="sec-mon">
+			&yen;:<span class="price">1111111</span>
+		</div>
+		<div class="sec-from" style="margin-top: .4rem">
+			<form  method="get" id="myform">
+			<ul>
+				<li>
+					<label><span class="detail_tit">联系人</span></label>
+					<input type="text" name="" id="add-name">
+				</li>
+				<li>
+					<label><span class="detail_tit">联系电话</span></label>
+					<input type="number" name="" id="phone">
+				</li>
+				<li>
+					<label><span class="detail_tit">收货地址</span></label>
+					<input type="text" name="" id="addre">
+				</li>
+				<li>
+					<label><span class="detail_tit">购买数量</span></label>
+					<input type="number" name="" id="numbs" onkeyup="calcmoney(this) ">
+				</li>
+			</ul>
+		</form>
+		<div class="total">
+			<span>合计:&yen;</span>
+			<span class="money">0</span>
+		</div>
+		</div>
+		<div class="submit-but">
+			确认提交
+		</div>	
+	</section>
+	<script type="text/javascript" src="js/join.js"></script>
+</body>
+</html>
