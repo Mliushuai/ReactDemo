@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    let names = ['alice','emily','kate'];
+    let arr=[
+        <h1>hi,goodlucky</h1>,
+        <h2>React agin</h2>
+    ];
+    let HelloMessage = React.createClass({
+        render:function () {
+            return <div>
+                <h1>good day{this.props.name}</h1>
+                <p>react</p>
+            </div>
+        }
+    })
+    ReactDOM.render(
+        <div>
+            {
+                names.map(function (name) {
+                return <div>hello{name}</div>
+            })
+        };
+            <h1>hello wold</h1>
+            <div>{arr}</div>
+            <HelloMessage name="lucky"/>
+        </div>,
+        document.getElementById('example')
+    );
+
+</script>
+</body>
+</html>
